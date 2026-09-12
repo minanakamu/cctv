@@ -11,7 +11,7 @@
   <header class="site-header">
     <div class="wrap">
       <p class="eyebrow">SECURITY INFORMATION</p>
-      <h1><span data-product-name>JC-CCTV</span> セキュリティ情報</h1>
+      <h1>JC-CCTV セキュリティ情報</h1>
       <p class="lead">脆弱性の報告方法，更新情報，安全な利用及び利用終了の方針を掲載します．</p>
     </div>
   </header>
@@ -21,7 +21,7 @@
       <h2 id="reporting-title">脆弱性を報告する</h2>
       <div class="panel emphasis">
         <p>セキュリティ上の問題を発見した場合は，次の窓口へ報告してください．</p>
-        <p><a class="email" data-reporting-email href="#">報告先を設定中です</a></p>
+        <p><a class="email" href="mailto:nakamura@gmail.com">nakamura@gmail.com</a></p>
         <p class="small">機密情報を含む場合は，まず連絡先だけを送り，安全な受け渡し方法を調整してください．初回報告へパスワード，秘密鍵，又は実際の人物画像を添付しないでください．</p>
       </div>
       <h3>報告に含めてほしい情報</h3>
@@ -36,9 +36,9 @@
     <section aria-labelledby="process-title">
       <h2 id="process-title">受付後の対応</h2>
       <ol class="steps">
-        <li><strong>受付確認</strong><span data-response-target>5営業日以内</span>に受付番号，担当窓口，次回連絡予定を返信します．</li>
+        <li><strong>受付確認</strong>5営業日以内に受付番号，担当窓口，次回連絡予定を返信します．</li>
         <li><strong>調査と優先度判断</strong>再現性，影響する版と情報資産，悪用状況，回避策を確認します．</li>
-        <li><strong>進捗連絡</strong><span data-progress-target>少なくとも30日ごと</span>に状況又は次回予定を連絡します．</li>
+        <li><strong>進捗連絡</strong>少なくとも30日ごと，重要な変更時，緊急案件では7日ごとに状況又は次回予定を連絡します．</li>
         <li><strong>解決通知</strong>修正版又は回避策，影響範囲，利用者が行う対応を公開し，報告者へ通知します．</li>
       </ol>
     </section>
@@ -46,7 +46,7 @@
     <section aria-labelledby="updates-title">
       <h2 id="updates-title">セキュリティ更新</h2>
       <div class="panel">
-        <p>対象機種は <strong data-model>CCTV-1</strong> です．更新情報では，対象版，新版，修正内容，影響，優先度，更新手順，停止時間及び失敗時の連絡先を案内します．</p>
+        <p>対象機種は <strong>CCTV-1</strong> です．更新情報では，対象版，新版，修正内容，影響，優先度，更新手順，停止時間及び失敗時の連絡先を案内します．</p>
         <p>更新前に，対象型番と対象版を確認してください．更新後は，管理画面の版表示，ログイン，撮影及び画像閲覧を確認してください．</p>
       </div>
       <p class="notice">現在提供中の版及び更新履歴は，公開時にこの節へ追加します．</p>
@@ -65,7 +65,7 @@
     <section aria-labelledby="end-title">
       <h2 id="end-title">サポート終了と利用終了</h2>
       <div class="panel">
-        <p>サポート終了日：<strong data-support-end-date>設定中</strong></p>
+        <p>サポート終了日：<strong>2030年12月31日</strong></p>
         <p>終了日の少なくとも90日前に，最終提供版，利用停止方法，データ削除方法を本ページで案内します．</p>
       </div>
       <ol>
@@ -79,26 +79,10 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <p><span data-product-name>JC-CCTV</span> <span data-model>CCTV-1</span> セキュリティ情報</p>
+      <p>JC-CCTV CCTV-1 セキュリティ情報</p>
       <p class="small">本ページはCCTV本体とは独立して公開します．</p>
     </div>
   </footer>
 
-  <script src="site-config.js"></script>
-  <script>
-    const config = window.CCTV_SECURITY_SITE;
-    document.querySelectorAll("[data-product-name]").forEach((node) => { node.textContent = config.productName; });
-    document.querySelectorAll("[data-model]").forEach((node) => { node.textContent = config.model; });
-    document.querySelectorAll("[data-response-target]").forEach((node) => { node.textContent = config.responseTarget; });
-    document.querySelectorAll("[data-progress-target]").forEach((node) => { node.textContent = config.progressTarget; });
-    document.querySelectorAll("[data-support-end-date]").forEach((node) => { node.textContent = config.supportEndDate; });
-
-    const email = document.querySelector("[data-reporting-email]");
-    const configured = !config.reportingEmail.startsWith("REPLACE_");
-    if (configured) {
-      email.textContent = config.reportingEmail;
-      email.href = `mailto:${config.reportingEmail}`;
-    }
-  </script>
 </body>
 </html>
