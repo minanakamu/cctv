@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="JC-CCTVの脆弱性報告窓口，セキュリティ更新情報，安全な利用及び利用終了に関する情報です．">
+  <title>JC-CCTV セキュリティ情報</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">SECURITY INFORMATION</p>
+      <h1><span data-product-name>JC-CCTV</span> セキュリティ情報</h1>
+      <p class="lead">脆弱性の報告方法，更新情報，安全な利用及び利用終了の方針を掲載します．</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section aria-labelledby="reporting-title">
+      <h2 id="reporting-title">脆弱性を報告する</h2>
+      <div class="panel emphasis">
+        <p>セキュリティ上の問題を発見した場合は，次の窓口へ報告してください．</p>
+        <p><a class="email" data-reporting-email href="#">報告先を設定中です</a></p>
+        <p class="small">機密情報を含む場合は，まず連絡先だけを送り，安全な受け渡し方法を調整してください．初回報告へパスワード，秘密鍵，又は実際の人物画像を添付しないでください．</p>
+      </div>
+      <h3>報告に含めてほしい情報</h3>
+      <ul>
+        <li>対象型番及びソフトウェア版</li>
+        <li>発生条件及び再現手順</li>
+        <li>想定される影響</li>
+        <li>連絡可能な返信先</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="process-title">
+      <h2 id="process-title">受付後の対応</h2>
+      <ol class="steps">
+        <li><strong>受付確認</strong><span data-response-target>5営業日以内</span>に受付番号，担当窓口，次回連絡予定を返信します．</li>
+        <li><strong>調査と優先度判断</strong>再現性，影響する版と情報資産，悪用状況，回避策を確認します．</li>
+        <li><strong>進捗連絡</strong><span data-progress-target>少なくとも30日ごと</span>に状況又は次回予定を連絡します．</li>
+        <li><strong>解決通知</strong>修正版又は回避策，影響範囲，利用者が行う対応を公開し，報告者へ通知します．</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="updates-title">
+      <h2 id="updates-title">セキュリティ更新</h2>
+      <div class="panel">
+        <p>対象機種は <strong data-model>CCTV-1</strong> です．更新情報では，対象版，新版，修正内容，影響，優先度，更新手順，停止時間及び失敗時の連絡先を案内します．</p>
+        <p>更新前に，対象型番と対象版を確認してください．更新後は，管理画面の版表示，ログイン，撮影及び画像閲覧を確認してください．</p>
+      </div>
+      <p class="notice">現在提供中の版及び更新履歴は，公開時にこの節へ追加します．</p>
+    </section>
+
+    <section aria-labelledby="safe-use-title">
+      <h2 id="safe-use-title">安全な利用</h2>
+      <ul>
+        <li>有線LAN及びHTTPSを使用し，インターネットへ直接公開しないでください．</li>
+        <li>初期パスワードは初回ログイン時に変更し，他用途のパスワードを使い回さないでください．</li>
+        <li>証明書警告を恒常的に無視せず，接続先と証明書の正当性を確認してください．</li>
+        <li>更新案内を確認し，必要な更新を適用してください．</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="end-title">
+      <h2 id="end-title">サポート終了と利用終了</h2>
+      <div class="panel">
+        <p>サポート終了日：<strong data-support-end-date>設定中</strong></p>
+        <p>終了日の少なくとも90日前に，最終提供版，利用停止方法，データ削除方法を本ページで案内します．</p>
+      </div>
+      <ol>
+        <li>CCTVをLANから切り離し，撮影を停止します．</li>
+        <li>管理画面から初期化を行います．</li>
+        <li>microSDを取り外し，復元できない方法で処理します．</li>
+        <li>再利用する場合は新しい媒体から再構築し，パスワード，暗号鍵，セッション秘密値及びTLS鍵を新規発行します．</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><span data-product-name>JC-CCTV</span> <span data-model>CCTV-1</span> セキュリティ情報</p>
+      <p class="small">本ページはCCTV本体とは独立して公開します．</p>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script>
+    const config = window.CCTV_SECURITY_SITE;
+    document.querySelectorAll("[data-product-name]").forEach((node) => { node.textContent = config.productName; });
+    document.querySelectorAll("[data-model]").forEach((node) => { node.textContent = config.model; });
+    document.querySelectorAll("[data-response-target]").forEach((node) => { node.textContent = config.responseTarget; });
+    document.querySelectorAll("[data-progress-target]").forEach((node) => { node.textContent = config.progressTarget; });
+    document.querySelectorAll("[data-support-end-date]").forEach((node) => { node.textContent = config.supportEndDate; });
+
+    const email = document.querySelector("[data-reporting-email]");
+    const configured = !config.reportingEmail.startsWith("REPLACE_");
+    if (configured) {
+      email.textContent = config.reportingEmail;
+      email.href = `mailto:${config.reportingEmail}`;
+    }
+  </script>
+</body>
+</html>
