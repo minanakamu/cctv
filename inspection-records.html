@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="JC-CCTVの検査及び更新記録の公開方針です．">
+  <title>JC-CCTV 検査・更新記録</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">INSPECTION RECORDS</p>
+      <h1>検査・更新記録</h1>
+      <p class="lead">更新情報及びセキュリティ検査の結果を，秘密情報を含めずに公開する方針です．</p>
+      <nav class="site-nav" aria-label="関連情報"><a href="index.html">利用者向け情報</a><a href="maintenance.html">保守担当者向け手順</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section aria-labelledby="status-title">
+      <h2 id="status-title">公開状況</h2>
+      <div class="panel warning">
+        <p>このページは記録の公開様式です．現時点では，署名済み更新物の公開，外部ポートスキャン及び既知脆弱性検査の実施結果は掲載していません．未実施の検査又は未提供の更新を，完了済みであるかのように扱わないでください．</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="update-title">
+      <h2 id="update-title">更新記録に掲載する事項</h2>
+      <ul>
+        <li>対象機種，対象版，新版，公開日</li>
+        <li>修正内容，影響，優先度及び更新手順</li>
+        <li>更新物の署名検証及びハッシュ照合の結果</li>
+        <li>更新後に確認した版，更新日時，動作確認の結果</li>
+      </ul>
+      <p>更新物を公開した時点で，この節へ版ごとの記録を追加します．</p>
+    </section>
+
+    <section aria-labelledby="network-title">
+      <h2 id="network-title">外部ポート・脆弱性検査記録に掲載する事項</h2>
+      <ul>
+        <li>実施日，対象機種・個体識別子，実施者</li>
+        <li>使用ツール及び検査範囲</li>
+        <li>TCP・UDPポートの結果</li>
+        <li>既知脆弱性検査の結果，誤検知判定，対策状況及び影響評価</li>
+      </ul>
+      <p class="small">内部IPアドレス，認証情報，秘密鍵，詳細な攻撃手順その他の防御に不利となる情報は公開しません．</p>
+    </section>
+
+    <section aria-labelledby="interface-title">
+      <h2 id="interface-title">インタフェース管理記録に掲載する事項</h2>
+      <ul>
+        <li>有線LAN，Wi-Fi，Bluetooth，USBの利用有無</li>
+        <li>物理的に無効化したインタフェースと無効化方法</li>
+        <li>USBで許可する機器クラスと，許可しないクラス</li>
+        <li>設定変更日，確認者，確認結果</li>
+      </ul>
+      <p>USB Audioを利用する場合は用途を明記します．利用しない場合は，利用不能にした設定と確認結果を掲載します．</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap"><p>JC-CCTV CCTV-1 検査・更新記録</p><p class="small">本ページはCCTV本体とは独立して公開します．</p></div></footer>
+</body>
+</html>

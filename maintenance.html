@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="JC-CCTVの保守担当者向けSSH公開鍵管理手順です．">
+  <title>JC-CCTV 保守担当者向け手順</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">MAINTENANCE PROCEDURE</p>
+      <h1>保守担当者向けSSH公開鍵管理手順</h1>
+      <p class="lead">この手順は，保守アクセスに用いる公開鍵の登録，失効及び置換を安全に行うためのものです．</p>
+      <nav class="site-nav" aria-label="関連情報"><a href="index.html">利用者向け情報</a><a href="inspection-records.html">検査・更新記録</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section aria-labelledby="scope-title">
+      <h2 id="scope-title">対象と前提</h2>
+      <div class="panel">
+        <p>対象はJC-CCTV CCTV-1の保守担当者です．SSH接続先，利用者名，秘密鍵，パスワード及び認証情報は，本ページ又はメール本文に記載しません．公開鍵だけを所定の安全な受け渡し方法で扱います．</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="register-title">
+      <h2 id="register-title">新しい公開鍵を登録する</h2>
+      <ol>
+        <li>保守担当者は，利用目的，担当者名又は役割，連絡先，有効開始日を窓口へ連絡します．</li>
+        <li>窓口から案内された安全な方法で，SSH公開鍵を提出します．秘密鍵やパスワードは提出しません．</li>
+        <li>管理者は提出内容を確認し，担当者ごとに公開鍵を登録します．</li>
+        <li>登録完了後，保守担当者は許可された接続方法で接続確認を行います．</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="revoke-title">
+      <h2 id="revoke-title">公開鍵を失効又は置換する</h2>
+      <ol>
+        <li>鍵の紛失，漏えいの疑い，担当変更，又は退職が判明した場合は，直ちに窓口へ失効を連絡します．</li>
+        <li>管理者は該当する公開鍵を無効化し，完了時刻と対応内容を記録します．</li>
+        <li>継続して保守が必要な場合は，新しい公開鍵を前節の手順で登録します．</li>
+        <li>保守担当者は新しい鍵で接続できることと，旧鍵では接続できないことを確認します．</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="records-title">
+      <h2 id="records-title">交付・対応記録</h2>
+      <div class="panel">
+        <p>本手順の提供及び鍵管理対応について，窓口は文書版，提供日，提供先の役割，提供方法，受領確認，失効又は置換の完了時刻を記録します．この記録に公開鍵，秘密鍵，パスワード又は接続先情報は含めません．</p>
+        <p class="small">文書版：1.0　公開日：2026年9月17日</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap"><p>JC-CCTV CCTV-1 保守担当者向け手順</p><p class="small">本手順はCCTV本体とは独立して公開します．</p></div></footer>
+</body>
+</html>

@@ -31,6 +31,9 @@ body {
 .eyebrow { margin: 0 0 .4rem; color: #8de3ec; font-size: .8rem; font-weight: 700; letter-spacing: .12em; }
 h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.25; }
 .lead { max-width: 42rem; margin: 1rem 0 0; font-size: 1.1rem; }
+.site-nav { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.site-nav a { padding: .45rem .8rem; border: 1px solid #8de3ec; border-radius: 999px; color: white; font-weight: 700; text-decoration: none; }
+.site-nav a:hover, .site-nav a:focus-visible { background: #ffffff1f; }
 
 main { padding: 2.5rem 0 4rem; }
 section { margin-top: 3rem; }
@@ -43,6 +46,7 @@ li + li { margin-top: .5rem; }
 .panel > :first-child { margin-top: 0; }
 .panel > :last-child { margin-bottom: 0; }
 .emphasis { border-color: var(--accent); background: var(--accent-soft); }
+.warning { border-color: #d99d22; background: #fff8e7; }
 .email { color: var(--ink); font-size: 1.25rem; font-weight: 750; overflow-wrap: anywhere; }
 .small, .notice { color: var(--muted); font-size: .9rem; }
 .steps { list-style: none; padding: 0; counter-reset: step; }

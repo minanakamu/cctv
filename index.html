@@ -13,6 +13,10 @@
       <p class="eyebrow">SECURITY INFORMATION</p>
       <h1>JC-CCTV セキュリティ情報</h1>
       <p class="lead">脆弱性の報告方法，更新情報，安全な利用及び利用終了の方針を掲載します．</p>
+      <nav class="site-nav" aria-label="関連情報">
+        <a href="maintenance.html">保守担当者向け手順</a>
+        <a href="inspection-records.html">検査・更新記録</a>
+      </nav>
     </div>
   </header>
 
@@ -49,7 +53,12 @@
         <p>対象機種は <strong>CCTV-1</strong> です．更新情報では，対象版，新版，修正内容，影響，優先度，更新手順，停止時間及び失敗時の連絡先を案内します．</p>
         <p>更新前に，対象型番と対象版を確認してください．更新後は，管理画面の版表示，ログイン，撮影及び画像閲覧を確認してください．</p>
       </div>
-      <p class="notice">現在提供中の版及び更新履歴は，公開時にこの節へ追加します．</p>
+      <div class="panel warning" role="note">
+        <h3>更新を適用しない場合の影響</h3>
+        <p>更新を適用しないと，既知の脆弱性を悪用した画像の漏えい，不正な管理者アクセス，設定変更，撮影又は更新機能の停止が発生する可能性があります．更新案内で対象となる場合は，利用者の責任で内容を確認し，案内された期限内に更新してください．</p>
+        <p>脆弱性による損害の発生を完全に防止又は復旧できることは保証できません．ただし，影響を把握した場合は，本ページで更新又は回避策を案内します．</p>
+      </div>
+      <p class="notice">現在提供中の版及び更新履歴は，署名検証済みの更新物を提供できる時点で，対象版，新版，公開日及び更新内容とともに掲載します．検査・更新記録の公開状況は<a href="inspection-records.html">検査・更新記録</a>で確認できます．</p>
     </section>
 
     <section aria-labelledby="safe-use-title">
@@ -74,6 +83,22 @@
         <li>microSDを取り外し，復元できない方法で処理します．</li>
         <li>再利用する場合は新しい媒体から再構築し，パスワード，暗号鍵，セッション秘密値及びTLS鍵を新規発行します．</li>
       </ol>
+      <div class="panel warning" role="note">
+        <h3>残存データに関する注意</h3>
+        <p>初期化又は媒体処理が不十分な場合，保存画像，管理者認証情報，暗号鍵，TLS鍵又はネットワーク設定が残る可能性があります．残存した情報により，第三者が画像を復元・閲覧したり，管理者になりすましたり，以前接続していたネットワークへ接続したりするおそれがあります．</p>
+        <p>本体の初期化だけでなく，microSD及び利用者のPC・バックアップ上に保存した画像や設定の複製も確認し，利用終了時は削除してください．</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="documents-title">
+      <h2 id="documents-title">利用者・保守担当者向け文書</h2>
+      <div class="panel">
+        <p>このページは利用者向け手順書の公開版です．文書版は<strong>1.0</strong>，公開日は<strong>2026年9月17日</strong>です．更新時は版番号と更新日を変更します．</p>
+        <ul>
+          <li><a href="maintenance.html">保守担当者向けSSH公開鍵管理手順</a></li>
+          <li><a href="inspection-records.html">検査・更新記録の公開状況</a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
