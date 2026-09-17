@@ -41,6 +41,9 @@ h2 { margin: 0 0 1rem; font-size: 1.55rem; line-height: 1.4; }
 h3 { margin-top: 1.5rem; font-size: 1.1rem; }
 ul, ol { padding-left: 1.5rem; }
 li + li { margin-top: .5rem; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; background: var(--surface); }
+th, td { padding: .65rem .75rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { background: #e9f0f5; }
 
 .panel { padding: 1.35rem 1.5rem; border: 1px solid var(--line); border-radius: .8rem; background: var(--surface); }
 .panel > :first-child { margin-top: 0; }
@@ -61,4 +64,5 @@ li + li { margin-top: .5rem; }
   .site-header { padding: 3rem 0 2.5rem; }
   .wrap { width: min(100% - 2rem, 900px); }
   .panel { padding: 1.1rem; }
+  th, td { padding: .5rem; font-size: .9rem; }
 }
