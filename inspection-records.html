@@ -26,18 +26,27 @@
     </section>
 
     <section aria-labelledby="update-title">
-      <h2 id="update-title">更新記録に掲載する事項</h2>
-      <ul>
-        <li>対象機種，対象版，新版，公開日</li>
-        <li>修正内容，影響，優先度及び更新手順</li>
-        <li>更新物の署名検証及びハッシュ照合の結果</li>
-        <li>更新後に確認した版，更新日時，動作確認の結果</li>
-      </ul>
-      <p>更新物を公開した時点で，この節へ版ごとの記録を追加します．</p>
+      <h2 id="update-title">更新記録</h2>
+      <div class="panel emphasis">
+        <p>2026年9月17日に，CCTV-1を1.0.0から1.0.1へ更新しました．更新は外部ネットワークへ接続しない有線LAN環境で実施し，CCTVは専用HTTPS更新サーバから更新物を取得しました．</p>
+      </div>
       <table>
-        <thead><tr><th>状態</th><th>対象版</th><th>新版</th><th>公開日</th><th>検証結果</th></tr></thead>
-        <tbody><tr><td>提供中</td><td>1.0.0</td><td>1.0.1</td><td>2026年9月17日</td><td>署名・ハッシュ照合成功</td></tr></tbody>
+        <thead><tr><th>確認項目</th><th>結果</th></tr></thead>
+        <tbody>
+          <tr><td>更新前版</td><td>1.0.0</td></tr>
+          <tr><td>更新後版</td><td>1.0.1</td></tr>
+          <tr><td>現在のリリース先</td><td>/opt/cctv/releases/1.0.1</td></tr>
+          <tr><td>更新サービス終了状態</td><td>status=0/SUCCESS</td></tr>
+          <tr><td>CCTVサービス再起動</td><td>実施済み</td></tr>
+          <tr><td>HTTPSサーバ証明書検証</td><td>成功</td></tr>
+          <tr><td>Ed25519署名検証</td><td>成功</td></tr>
+          <tr><td>SHA-256ハッシュ照合</td><td>成功</td></tr>
+          <tr><td>マニフェストとパッケージの版番号照合</td><td>成功</td></tr>
+          <tr><td>更新履歴DBへの保存</td><td>成功</td></tr>
+        </tbody>
       </table>
+      <p>更新履歴には，更新時刻2026-09-17T07:01:55.989811+00:00，更新前版1.0.0，更新後版1.0.1，検証結果verified_and_installedが保存されています．</p>
+      <p class="small">更新サーバの内部アドレス，証明書の秘密情報及び署名鍵は公開しません．</p>
     </section>
 
     <section aria-labelledby="network-title">
@@ -76,7 +85,7 @@
 
     <section aria-labelledby="revision-title">
       <h2 id="revision-title">改訂履歴</h2>
-      <table><thead><tr><th>版</th><th>日付</th><th>変更内容</th></tr></thead><tbody><tr><td>1.0</td><td>2026年9月17日</td><td>更新・検査記録を掲載</td></tr></tbody></table>
+      <table><thead><tr><th>版</th><th>日付</th><th>変更内容</th></tr></thead><tbody><tr><td>1.1</td><td>2026年9月17日</td><td>1.0.0から1.0.1への更新実施結果を追加</td></tr><tr><td>1.0</td><td>2026年9月17日</td><td>更新・検査記録を掲載</td></tr></tbody></table>
     </section>
   </main>
 
