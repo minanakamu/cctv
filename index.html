@@ -63,6 +63,20 @@
         <p><strong>1.0.1</strong>を提供中です．対象版は1.0.0，公開日は2026年9月17日です．有線LAN上の専用HTTPS更新サーバから取得し，サーバ証明書，Ed25519署名，SHA-256ハッシュ及び版番号を検証して更新します．</p>
         <p>更新後は，管理画面の版表示が1.0.1であること，ログイン，撮影及び画像閲覧ができることを確認してください．詳細は<a href="inspection-records.html#update-title">更新記録</a>を参照してください．</p>
       </div>
+      <div class="panel">
+        <h3>更新検証に用いる暗号方式とCRYPTREC対応</h3>
+        <p>更新の完全性確認に用いる暗号方式は，いずれもCRYPTREC「電子政府における調達のために参照すべき暗号のリスト（CRYPTREC暗号リスト）」の表1（電子政府推奨暗号リスト，現行暗号リスト）に収載されたアルゴリズムです．</p>
+        <ul>
+          <li>署名：<strong>EdDSA</strong>（本機はEd25519を使用．RFC 8032）</li>
+          <li>ハッシュ関数：<strong>SHA-256</strong></li>
+        </ul>
+        <p class="small">参照先本文の引用（表1 現行暗号リストより．列見出しは「技術分類」「暗号技術」）：</p>
+        <blockquote>
+          <p>署名：DSA（注１），ECDSA，<strong>EdDSA</strong>，RSA-PSS，RSASSA-PKCS1-v1_5</p>
+          <p>ハッシュ関数：<strong>SHA-256</strong>，SHA-384，SHA-512，SHA-512/256，SHA3-256，SHA3-384，SHA3-512，SHAKE128（注４），SHAKE256（注４）</p>
+        </blockquote>
+        <p class="small">出典：CRYPTREC「電子政府における調達のために参照すべき暗号のリスト（CRYPTREC暗号リスト）」LS-0001-2022R2（令和5年3月30日）．https://www.cryptrec.go.jp/list/cryptrec-ls-0001-2022r2.pdf</p>
+      </div>
     </section>
 
     <section aria-labelledby="safe-use-title">
