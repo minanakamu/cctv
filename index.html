@@ -79,6 +79,34 @@
       </div>
     </section>
 
+    <section aria-labelledby="storage-crypto-title">
+      <h2 id="storage-crypto-title">保存データの暗号化・完全性保護に用いる暗号方式とCRYPTREC対応</h2>
+      <div class="panel">
+        <p>ストレージに保存する守るべき情報資産の暗号化及び完全性保護に用いる暗号方式は，いずれもCRYPTREC「電子政府における調達のために参照すべき暗号のリスト（CRYPTREC暗号リスト）」の表1（電子政府推奨暗号リスト，現行暗号リスト）に収載されたアルゴリズムです．</p>
+        <ul>
+          <li>保存画像：<strong>Fernet（AES-128-CBC ＋ HMAC-SHA256）</strong>で暗号化し，復号時に認証コードを検証します．</li>
+          <li>工場初期パスワード・画像鍵・セッション秘密値・HTTPS秘密鍵・管理者ハッシュ用鍵：<strong>AES-256-GCM</strong>で暗号化して保存します．</li>
+          <li>管理者パスワード：Argon2idで生成したハッシュを，<strong>Fernet（AES-128-CBC）</strong>で暗号化して保存します．</li>
+          <li>重要設定・認証失敗情報・画像一覧・固定構成設定：<strong>HMAC-SHA256</strong>で完全性を検証します．</li>
+        </ul>
+        <p>対応するCRYPTREC技術分類は，共通鍵暗号（<strong>AES</strong>），暗号利用モード（秘匿モードの<strong>CBC</strong>，認証付き秘匿モードの<strong>GCM</strong>），メッセージ認証コード（<strong>HMAC</strong>），及びハッシュ関数（<strong>SHA-256</strong>）です．</p>
+        <p class="small">参照先本文の引用（表1 現行暗号リストより．列見出しは「技術分類」「暗号技術」）：</p>
+        <blockquote>
+          <p>共通鍵暗号（128ビットブロック暗号）：<strong>AES</strong>，Camellia</p>
+          <p>暗号利用モード（秘匿モード）：<strong>CBC</strong>，CFB，CTR，OFB，XTS</p>
+          <p>暗号利用モード（認証付き秘匿モード）：CCM，<strong>GCM</strong></p>
+          <p>メッセージ認証コード：CMAC，<strong>HMAC</strong></p>
+          <p>ハッシュ関数：<strong>SHA-256</strong>，SHA-384，SHA-512，SHA-512/256，SHA3-256，SHA3-384，SHA3-512，SHAKE128（注４），SHAKE256（注４）</p>
+        </blockquote>
+        <p class="small">出典：CRYPTREC「電子政府における調達のために参照すべき暗号のリスト（CRYPTREC暗号リスト）」LS-0001-2022R2（令和5年3月30日）．https://www.cryptrec.go.jp/list/cryptrec-ls-0001-2022r2.pdf</p>
+      </div>
+      <div class="panel">
+        <h3>一時画像・一時データの取扱い（守るべき情報資産からの除外根拠）</h3>
+        <p>撮影，暗号化，復号及び応答生成の過程で生じる一時画像・一時データは，メモリ上でのみ処理し，平文のまま永続ストレージへ書き出しません．スワップはRAM上のzramのみを使用し，ディスク上の永続スワップへ退避しません．加えて，本製品は「必須の通信利用条件」に示す保護された有線LAN内でのみ利用し，守るべき情報資産へは認証後のみアクセスできます．</p>
+        <p>以上のアクセス制御及び保護されたネットワーク環境内での利用を前提として，一時画像・一時データは，評価ガイドの一時データ除外の考え方に基づき，ストレージに保存する守るべき情報資産の対象外とします．</p>
+      </div>
+    </section>
+
     <section aria-labelledby="safe-use-title">
       <h2 id="safe-use-title">必須の通信利用条件</h2>
       <div class="panel warning" role="note">
@@ -115,7 +143,7 @@
     <section aria-labelledby="documents-title">
       <h2 id="documents-title">利用者・保守担当者向け文書</h2>
       <div class="panel">
-        <p>このページは利用者向け手順書の公開版です．文書版は<strong>1.2</strong>，公開日は<strong>2026年10月1日</strong>です．更新時は版番号と更新日を変更します．</p>
+        <p>このページは利用者向け手順書の公開版です．文書版は<strong>1.3</strong>，公開日は<strong>2026年10月28日</strong>です．更新時は版番号と更新日を変更します．</p>
         <ul>
           <li><a href="maintenance.html">保守担当者向けSSH公開鍵管理手順</a></li>
           <li><a href="inspection-records.html">検査・更新記録の公開状況</a></li>
@@ -128,7 +156,7 @@
       <div class="panel">
         <table>
           <thead><tr><th>版</th><th>日付</th><th>変更内容</th></tr></thead>
-          <tbody><tr><td>1.2</td><td>2026年10月1日</td><td>必須の通信利用条件を明記</td></tr><tr><td>1.1</td><td>2026年9月17日</td><td>提供中の更新版1.0.1と更新検証情報を追加</td></tr><tr><td>1.0</td><td>2026年9月17日</td><td>利用者向け安全利用，更新，利用終了情報を公開</td></tr></tbody>
+          <tbody><tr><td>1.3</td><td>2026年10月28日</td><td>保存データの暗号化・完全性保護方式のCRYPTREC対応と一時データの取扱いを追記</td></tr><tr><td>1.2</td><td>2026年10月1日</td><td>必須の通信利用条件を明記</td></tr><tr><td>1.1</td><td>2026年9月17日</td><td>提供中の更新版1.0.1と更新検証情報を追加</td></tr><tr><td>1.0</td><td>2026年9月17日</td><td>利用者向け安全利用，更新，利用終了情報を公開</td></tr></tbody>
         </table>
       </div>
     </section>
